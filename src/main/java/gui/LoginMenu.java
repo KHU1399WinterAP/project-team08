@@ -1,37 +1,35 @@
 package gui;
-
 import models.User;
 
 import javax.swing.*;
+import java.Database;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.sql.PreparedStatement;
-
 import javax.swing.*;
 
-public class RegisterMenu extends JFrame {
-    private JPanel mainpanel;
-    private JButton exitButton;
-    private JTextField usernameTextField;
+public class LoginMenu extends JFrame{
+    private JTextField colorSwitchTextField;
     private JTextField textField2;
+    private JTextField usernameTextField;
     private JTextField passwordTextField;
     private JPasswordField passwordField1;
-    private JButton registerButton;
+    private JButton loginButton;
+    private JPanel mainpanel;
 
 
+    public LoginMenu(JFrame previousFrame) {
+        this.PREVIOUS_FRAME= previousFrame;
+        setContentPane(mainpanel);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
- public RegisterMenu(JFrame previousFrame){
-    this.PREVIOUS_FRAME= previousFrame;
-    setContentPane(mainpanel);
-    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-    setResizable(false);
+        pack();
+        setLocationRelativeTo(null);
 
-    pack();
-    setLocationRelativeTo(null);
 
-    initlisteners();
-}
+        initlisteners();
 
+    }
 
     private void initlisteners(){
         initRegisterButtonListeners();
@@ -81,18 +79,25 @@ public class RegisterMenu extends JFrame {
         );
     }
 
+
     private void  initRegisterButtonListeners() {
-        registerButton.addActionListener(
+        loginButton.addActionListener(
                 e -> {
-                    User user = new User(usernameTextField.getText(), passwordField1.getPassword());
-                    System.out.println(user);
-                    closeWindow();
+                    String username=usernameTextField.getText();
+                    String password =String.valueOf(passwordField1.getPassword());
+                    User user= Database.getUserByUsername(username);
+
+                    if(user !=null && user.password.equals(password)){
+                        Dashboard dashboard= new Dashboard(PREVIOUS_FRAME);
+                        dashboard.setVisible(true);
+                        this.dispose();
+                    }
                 }
 
         );
     }
     public void initMainMenuButtonListeners(){
-        exitButton.addActionListener(
+        passwordField1.addActionListener(
                 e -> closeWindow());
 
     }
@@ -102,6 +107,6 @@ public class RegisterMenu extends JFrame {
         this.dispose();
         PREVIOUS_FRAME.setVisible(true);
     }
+
+
 }
-
-
