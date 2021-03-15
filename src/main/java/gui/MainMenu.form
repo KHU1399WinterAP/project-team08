@@ -14,21 +14,12 @@
         </constraints>
         <properties>
           <background color="-12511956"/>
-          <font name="Segoe MDL2 Assets" size="28" style="3"/>
-          <foreground color="-4509042"/>
+          <enabled value="true"/>
+          <font name="CornFed" size="28" style="1"/>
+          <foreground color="-2081620"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <text value="Color Switch"/>
-        </properties>
-      </component>
-      <component id="8d6d8" class="javax.swing.JButton" binding="loginButton" custom-create="true" default-binding="true">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-12643007"/>
-          <foreground color="-12511956"/>
-          <text value="Login"/>
         </properties>
       </component>
       <component id="e2458" class="javax.swing.JButton" binding="exitButton" default-binding="true">
@@ -37,6 +28,7 @@
         </constraints>
         <properties>
           <background color="-10422797"/>
+          <font name="Aharoni"/>
           <foreground color="-12511956"/>
           <text value="Exit"/>
         </properties>
@@ -47,8 +39,21 @@
         </constraints>
         <properties>
           <background color="-1452524"/>
+          <font name="Aharoni"/>
           <foreground color="-12511956"/>
           <text value="Register"/>
+        </properties>
+      </component>
+      <component id="8d6d8" class="javax.swing.JButton" binding="loginButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12643007"/>
+          <font name="Aharoni" size="12" style="1"/>
+          <foreground color="-12511956"/>
+          <hideActionText value="true"/>
+          <text value="Login"/>
         </properties>
       </component>
     </children>
