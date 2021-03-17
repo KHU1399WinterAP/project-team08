@@ -24,6 +24,8 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
 
+        initListeners();
+
     }
 
     private void createUIComponents() {

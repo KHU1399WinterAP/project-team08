@@ -28,12 +28,13 @@ public class RegisterMenu extends JFrame {
 
         initlisteners();
 
+
     }
 
 
     private void initlisteners() {
         initRegisterButtonListeners();
-        initMainMenuButtonListeners();
+
         initBackBottomListener();
     }
 
@@ -87,15 +88,16 @@ public class RegisterMenu extends JFrame {
                     System.out.println(user);
                     closeWindow();
                 }
+                );
+        exitButton.addActionListener(e -> {
+            Dashboard dashboard=new Dashboard(this);
+            this.setVisible(false);
+            dashboard.setVisible(true);
 
-        );
+        });
     }
 
-    public void initMainMenuButtonListeners() {
-        exitButton.addActionListener(
-                e -> closeWindow());
 
-    }
 
     private void initBackBottomListener() {
         BackButton.addActionListener(e -> {
@@ -108,7 +110,7 @@ public class RegisterMenu extends JFrame {
 
     private void closeWindow() {
         this.dispose();
-        PREVIOUS_FRAME.setVisible(true);
+
     }
 }
 

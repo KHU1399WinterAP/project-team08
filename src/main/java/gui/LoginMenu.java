@@ -15,8 +15,8 @@ public class LoginMenu extends JFrame {
     private JPasswordField passwordField1;
     private JButton loginButton;
     private JPanel mainpanel;
-    private JTextField UsernameField;
     private JButton backButton;
+    private JTextField UsernameField;
 
 
     public LoginMenu(JFrame previousFrame) {
@@ -122,4 +122,7 @@ public class LoginMenu extends JFrame {
     }
 
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
