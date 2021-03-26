@@ -1,8 +1,6 @@
-/*package animations;
+package animations;
 
-
-import main.java.config.AnimationConfig;
-
+import config.AnimationConfig;
 import java.awt.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -21,6 +19,7 @@ public class ColorChangeAnimation extends Thread{
     private int differenceRed;
     private int differenceGreen;
     private int differenceBlue;
+
     public ColorChangeAnimation(Color originalColor, Color pulseColor, Consumer<Color> stepCallback) {
         this(originalColor, pulseColor, stepCallback, null, AnimationConfig.ERROR_BACKGROUND_ANIMATION_DEFAULT_HALF_DURATION);
     }
@@ -80,6 +79,4 @@ public class ColorChangeAnimation extends Thread{
             e.printStackTrace();
         }
     }
-
 }
-*/

@@ -1,8 +1,7 @@
-/*package config;
+package config;
 
-
-import main.java.enums.LanguageKey;
-import main.java.models.Language;
+import enums.LanguageKey;
+import models.Language;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,9 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-
 public class LanguageConfig {
-
     public static final HashMap<LanguageKey, Language> LANGUAGES = new HashMap<>(
             Map.of(LanguageKey.EN, new Language("src/main/language/en.properties"),
                     LanguageKey.FA, new Language("src/main/language/fa.properties"))
@@ -45,4 +42,3 @@ public class LanguageConfig {
         return word;
     }
 }
-*/

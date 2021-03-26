@@ -1,36 +1,35 @@
 package gui;
+
 import models.User;
 
 import javax.swing.*;
-import database.Database;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class LoginMenu extends JFrame{
+public class RegisterMenu extends JFrame{
+    private JTextField textField1;
+    private JPasswordField passwordField1;
+    private JButton exitButton;
+    private JPanel mainpanel;
     private JTextField colorSwitchTextField;
-    private JTextField textField2;
     private JTextField usernameTextField;
     private JTextField passwordTextField;
-    private JPasswordField passwordField1;
-    private JButton loginButton;
-    private JPanel mainpanel;
     private JButton backButton;
 
 
-
-    public LoginMenu(JFrame previousFrame) {
+    public RegisterMenu(JFrame previousFrame){
         this.PREVIOUS_FRAME= previousFrame;
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
         setResizable(false);
+
         pack();
         setLocationRelativeTo(null);
-
 
         initlisteners();
 
     }
+
 
     private void initlisteners(){
         initRegisterButtonListeners();
@@ -82,28 +81,33 @@ public class LoginMenu extends JFrame{
     }
 
 
-    private void  initRegisterButtonListeners() {
-        loginButton.addActionListener(
-                e -> {
-                    String username=usernameTextField.getText();
-                    String password =String.valueOf(passwordField1.getPassword());
-                    User user= Database.getUserByUsername(username);
-                    if(user !=null && user.password.equals(password)){
-                        Dashboard dashboard= new Dashboard(PREVIOUS_FRAME);
-                        dashboard.setVisible(true);
-                        this.dispose();
-                    }
-                }
 
-        );
+    private void  initRegisterButtonListeners() {
+        exitButton.addActionListener(
+                e -> {
+                    User user = new User(textField1.getText(), passwordField1.getPassword());
+                    System.out.println(user);
+
+                    closeWindow();
+                    });
+
+
+        exitButton.addActionListener(
+                e -> {
+                    Dashboard dashboard = new Dashboard(this);
+                    this.setVisible(false);
+                    dashboard.setVisible(true);
+                });
+        ;
 
 
     }
     public void initMainMenuButtonListeners(){
-        passwordField1.addActionListener(
+        exitButton.addActionListener(
                 e -> closeWindow());
 
     }
+
 
     private void initBackBottomListener() {
         backButton.addActionListener(e -> {
@@ -112,11 +116,9 @@ public class LoginMenu extends JFrame{
             mainMenu.setVisible(true);
         });
     }
-
     private void closeWindow(){
         this.dispose();
-        PREVIOUS_FRAME.setVisible(true);
+
     }
-
-
 }
+
