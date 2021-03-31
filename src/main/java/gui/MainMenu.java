@@ -1,29 +1,36 @@
 package gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import javax.swing.*;
 
 public class MainMenu extends JFrame {
-    private JPanel mainpanel;
     private JButton loginButton;
     private JButton exitButton;
     private JButton registerButton;
+    private JPanel mainpanel;
 
 
 
-        public MainMenu() {
+    public static void main (String[]args){
 
-            setContentPane(mainpanel);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   MainMenu frame= new MainMenu();
+           frame.setVisible(true);
+           frame.pack();
 
+           frame.setContentPane(frame.mainpanel);
+           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           frame.setVisible(true);
 
-            pack();
-            setLocationRelativeTo(null);
+           frame.pack();
+           frame.setLocationRelativeTo(null);
 
-            initListeners();
+           frame.initListeners();
 
         }
 
@@ -57,4 +64,28 @@ public class MainMenu extends JFrame {
             exitButton.addActionListener(e -> dispatchEvent(new WindowEvent(this,WindowEvent.WINDOW_CLOSING)));
 
         }
+
+    private void createUIComponents() {
+        mainpanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                try {
+                    var image = ImageIO.read(getClass().getResource("/main/resources/background.png"));
+                    g.drawImage(image, 0, 0, this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+    }
+
+
+    class CustomJpanel extends JPanel {
+        @Override
+        protected void paintComponent(Graphics g) {
+            g.drawImage(new ImageIcon(getClass().getResource("/resources/background.png")).getImage(), 0, 0, null);
+        }
+    }
+
+
 }
