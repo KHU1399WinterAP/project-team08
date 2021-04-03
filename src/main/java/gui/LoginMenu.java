@@ -85,7 +85,7 @@ public class LoginMenu extends JFrame{
     private void  initRegisterButtonListeners() {
         loginButton.addActionListener(
                 e -> {
-                    String username=usernameTextField.getText();
+                    String username=textField2.getText();
                     String password =String.valueOf(passwordField1.getPassword());
                     User user= Database.getUserByUsername(username);
                     if(user !=null && user.password.equals(password)){

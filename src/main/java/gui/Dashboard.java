@@ -3,9 +3,13 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.GroupLayout;
+import java.awt.image.*;
 public class Dashboard extends javax.swing.JFrame {
 
     private JPanel mainpanel;
@@ -34,10 +38,11 @@ initListeners();
     }
 
     private void initListeners() {
-        initLogoutBottomListeners();
+        initLogoutBottomListener();
+        initSinglePlayerButtonListener();
     }
 
-    private void initLogoutBottomListeners() {
+    private void initLogoutBottomListener() {
 
         logOutButton.addActionListener(e -> {
             MainMenu mainMenu = new MainMenu();
@@ -46,7 +51,15 @@ initListeners();
 
         });
     }
+    private void initSinglePlayerButtonListener(){
+        singlePlayerButton.addActionListener(e -> {
+            SinglePlayer singleplayer = new SinglePlayer();
+            this.setVisible(false);
+            singleplayer.setVisible(true);
 
+
+        });
+    }
 }
 
 
