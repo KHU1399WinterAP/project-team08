@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.GroupLayout;
 import java.awt.image.*;
+
 public class Dashboard extends javax.swing.JFrame {
 
     private JPanel mainpanel;
@@ -29,7 +30,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-initListeners();
+        initListeners();
+
     }
 
 
@@ -40,6 +42,7 @@ initListeners();
     private void initListeners() {
         initLogoutBottomListener();
         initSinglePlayerButtonListener();
+        initSettingButtonListeners();
     }
 
     private void initLogoutBottomListener() {
@@ -51,13 +54,20 @@ initListeners();
 
         });
     }
-    private void initSinglePlayerButtonListener(){
+
+    private void initSinglePlayerButtonListener() {
         singlePlayerButton.addActionListener(e -> {
             SinglePlayer singleplayer = new SinglePlayer();
             this.setVisible(false);
             singleplayer.setVisible(true);
+        });
+    }
 
-
+    private void initSettingButtonListeners() {
+        settingButton.addActionListener(e -> {
+            Setting setting = new Setting();
+            this.setVisible(false);
+            setting.setVisible(true);
         });
     }
 }

@@ -21,7 +21,7 @@ public class LoginMenu extends JFrame{
     public LoginMenu(JFrame previousFrame) {
         this.PREVIOUS_FRAME= previousFrame;
         setContentPane(mainpanel);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setResizable(false);
         pack();
