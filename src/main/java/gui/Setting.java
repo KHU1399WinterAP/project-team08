@@ -13,6 +13,7 @@ public class Setting extends JFrame {
 
 
     public Setting(JFrame previousFrame) {
+        super("MainMenu|Dashboard|Setting");
         this.PREVIOUS_FRAME = previousFrame;
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

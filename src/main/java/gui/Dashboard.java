@@ -22,7 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
     private final JFrame MAIN_MENU_FRAME;
 
     public Dashboard(JFrame MainMenu) {
-
+        super("MainMenu|Dashboard");
         this.MAIN_MENU_FRAME = MainMenu;
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

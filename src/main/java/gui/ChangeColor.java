@@ -18,7 +18,7 @@ public class ChangeColor extends JFrame {
 
 
     public ChangeColor(JFrame previousFrame) {
-        super("mainmenu|dashboard|setting|changecolor");
+        super("MainMenu|Dashboard|Setting|ChangeColor");
         this.PREVIOUS_FRAME = previousFrame;
 
 

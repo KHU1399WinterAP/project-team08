@@ -13,7 +13,7 @@ public class SinglePlayer extends JFrame {
 
 
     public SinglePlayer(JFrame previousFrame) {
-
+        super("MainMenu|Dashboard|SinglePlayer");
         this.PREVIOUS_FRAME = previousFrame;
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -29,7 +29,6 @@ public class SinglePlayer extends JFrame {
     private void initlisteners() {
         initPauseButtonListener();
     }
-
 
 
     private void initPauseButtonListener() {
