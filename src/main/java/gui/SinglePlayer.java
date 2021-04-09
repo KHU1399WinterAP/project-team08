@@ -1,54 +1,45 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SinglePlayer extends JFrame{
+public class SinglePlayer extends JFrame {
     private JButton menuButton;
     private JButton dashboardButton;
-    private JButton pauseButton;
+    private JPanel mainpanel;
+    private JButton pauseButton2;
+    private JFrame PREVIOUS_FRAME;
 
-    public SinglePlayer(){
 
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    public SinglePlayer(JFrame previousFrame) {
+        super("MainMenu|Dashboard|SinglePlayer");
+        this.PREVIOUS_FRAME = previousFrame;
+        setContentPane(mainpanel);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
+
         pack();
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         initlisteners();
 
-
     }
-    private void initlisteners(){
-        initpauseButtonListener();
-        initmenuButtonListener();
-        initdashboardButtonListener();
+
+    private void initlisteners() {
+        initPauseButtonListener();
     }
 
 
-
-    private void  initpauseButtonListener() {
-
-
-    }
-    private void  initmenuButtonListener() {
-        menuButton.addActionListener(
-                e -> {
-                    MainMenu mainMenu = new MainMenu();
-                    this.dispose();
-                    mainMenu.setVisible(true);
-                }
-        );
-    }
-    private void initdashboardButtonListener () {
-        dashboardButton.addActionListener(e -> {
-            Dashboard dashboard= new Dashboard(this);
+    private void initPauseButtonListener() {
+        pauseButton2.addActionListener(e -> {
+            Pause pause = new Pause();
             this.setVisible(false);
-            dashboard.setVisible(true);
-
+            pause.setVisible(true);
         });
     }
 
-    private void createUIComponents(){
+    private void createUIComponents() {
     }
 
 }

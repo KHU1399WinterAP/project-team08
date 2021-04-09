@@ -7,10 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class LoginMenu extends JFrame{
-    private JTextField colorSwitchTextField;
     private JTextField textField2;
-    private JTextField usernameTextField;
-    private JTextField passwordTextField;
     private JPasswordField passwordField1;
     private JButton loginButton;
     private JPanel mainpanel;
