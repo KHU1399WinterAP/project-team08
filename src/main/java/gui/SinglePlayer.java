@@ -1,16 +1,18 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SinglePlayer extends JFrame{
+public class SinglePlayer extends JFrame {
     private JButton menuButton;
     private JButton dashboardButton;
-    private JButton pauseButton;
     private JPanel mainpanel;
+    private JButton pauseButton2;
     private JFrame PREVIOUS_FRAME;
-public SinglePlayer(JPanel mainpanel){this.mainpanel=mainpanel;}
 
-    public SinglePlayer(JFrame previousFrame){
+
+    public SinglePlayer(JFrame previousFrame) {
 
         this.PREVIOUS_FRAME = previousFrame;
         setContentPane(mainpanel);
@@ -21,35 +23,24 @@ public SinglePlayer(JPanel mainpanel){this.mainpanel=mainpanel;}
         setLocationRelativeTo(null);
 
         initlisteners();
+
     }
 
-    private void initlisteners(){
+    private void initlisteners() {
         initPauseButtonListener();
-        initMenuButtonListener();
-        initDashboardButtonListener();
     }
 
-    private void  initPauseButtonListener() {
 
-    }
 
-    private void  initMenuButtonListener() {
-        menuButton.addActionListener(
-                e -> {
-                    MainMenu mainMenu = new MainMenu();
-                    this.dispose();
-                    mainMenu.setVisible(true);
-                });
-    }
-    private void initDashboardButtonListener () {
-        dashboardButton.addActionListener(e -> {
-            Dashboard dashboard= new Dashboard(this);
+    private void initPauseButtonListener() {
+        pauseButton2.addActionListener(e -> {
+            Pause pause = new Pause();
             this.setVisible(false);
-            dashboard.setVisible(true);
+            pause.setVisible(true);
         });
     }
 
-    private void createUIComponents(){
+    private void createUIComponents() {
     }
 
 }

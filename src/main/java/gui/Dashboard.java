@@ -57,7 +57,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void initSinglePlayerButtonListener() {
         singlePlayerButton.addActionListener(e -> {
-            SinglePlayer singleplayer = new SinglePlayer();
+            SinglePlayer singleplayer = new SinglePlayer(this);
             this.setVisible(false);
             singleplayer.setVisible(true);
         });
@@ -65,7 +65,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void initSettingButtonListeners() {
         settingButton.addActionListener(e -> {
-            Setting setting = new Setting();
+            Setting setting = new Setting(this);
             this.setVisible(false);
             setting.setVisible(true);
         });

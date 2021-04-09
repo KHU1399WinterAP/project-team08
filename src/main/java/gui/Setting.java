@@ -1,11 +1,14 @@
 package gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Setting extends JFrame {
 
     private JPanel mainpanel;
     private JButton changecolor;
+    private JButton dashboardButton;
     private JFrame PREVIOUS_FRAME;
 
 
@@ -19,17 +22,28 @@ public class Setting extends JFrame {
         setLocationRelativeTo(null);
 
         initListener();
+
     }
 
-    private void initListener(){
+    private void initListener() {
         initChangeColorButtonListener();
+        initDashboardButtonListener();
     }
 
-    private void initChangeColorButtonListener(){
+    private void initChangeColorButtonListener() {
         changecolor.addActionListener(e -> {
-            ChangeColor changeColor=new ChangeColor(this);
+            ChangeColor changeColor = new ChangeColor(this);
             this.setVisible(false);
-            changeColor.setVisible(true);});
+            changeColor.setVisible(true);
+        });
     }
 
+    private void initDashboardButtonListener() {
+        dashboardButton.addActionListener(e -> {
+            Dashboard dashboard = new Dashboard(this);
+            this.setVisible(false);
+            dashboard.setVisible(true);
+        });
     }
+
+}

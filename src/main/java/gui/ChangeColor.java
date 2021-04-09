@@ -5,8 +5,6 @@ import config.GuiConfig;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.function.Consumer;
 
 public class ChangeColor extends JFrame {
@@ -20,10 +18,14 @@ public class ChangeColor extends JFrame {
 
 
     public ChangeColor(JFrame previousFrame) {
+        super("mainmenu|dashboard|setting|changecolor");
         this.PREVIOUS_FRAME = previousFrame;
+
+
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
+
 
         pack();
         setLocationRelativeTo(null);
@@ -43,7 +45,7 @@ public class ChangeColor extends JFrame {
 
     private void initRedButtonListener() {
         redButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) ->SinglePlayer..setBackground(color);
+            Consumer<Color> stepCallback = (color) -> mainpanel.setBackground(color);
             Runnable endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_RED);
             new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_RED, stepCallback, endCallback).start();
         });
@@ -75,7 +77,7 @@ public class ChangeColor extends JFrame {
 
     private void initBackButtonListener() {
         backButton.addActionListener(e -> {
-           Setting setting=new Setting(this);
+            Setting setting = new Setting(this);
             this.setVisible(false);
             setting.setVisible(true);
         });
