@@ -5,12 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SinglePlayer extends JFrame {
-    private JButton menuButton;
-    private JButton dashboardButton;
     private JPanel mainpanel;
     private JButton pauseButton2;
     private JFrame PREVIOUS_FRAME;
-
 
     public SinglePlayer(JFrame previousFrame) {
         super("MainMenu|Dashboard|SinglePlayer");
@@ -22,11 +19,12 @@ public class SinglePlayer extends JFrame {
         pack();
         setLocationRelativeTo(null);
 
-        initlisteners();
+        initListeners();
+       new ChangeColor(mainpanel);
 
     }
 
-    private void initlisteners() {
+    private void initListeners() {
         initPauseButtonListener();
     }
 

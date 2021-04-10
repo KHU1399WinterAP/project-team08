@@ -24,11 +24,13 @@ public class Setting extends JFrame {
 
         initListener();
 
+
     }
 
     private void initListener() {
         initChangeColorButtonListener();
         initDashboardButtonListener();
+
     }
 
     private void initChangeColorButtonListener() {
@@ -46,5 +48,6 @@ public class Setting extends JFrame {
             dashboard.setVisible(true);
         });
     }
+
 
 }
