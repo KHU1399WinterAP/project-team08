@@ -3,9 +3,14 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.GroupLayout;
+import java.awt.image.*;
+
 public class Dashboard extends javax.swing.JFrame {
 
     private JPanel mainpanel;
@@ -17,7 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
     private final JFrame MAIN_MENU_FRAME;
 
     public Dashboard(JFrame MainMenu) {
-
+        super("MainMenu|Dashboard");
         this.MAIN_MENU_FRAME = MainMenu;
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +30,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
-initListeners();
+        initListeners();
+
     }
 
 
@@ -34,10 +40,12 @@ initListeners();
     }
 
     private void initListeners() {
-        initLogoutBottomListeners();
+        initLogoutBottomListener();
+        initSinglePlayerButtonListener();
+        initSettingButtonListeners();
     }
 
-    private void initLogoutBottomListeners() {
+    private void initLogoutBottomListener() {
 
         logOutButton.addActionListener(e -> {
             MainMenu mainMenu = new MainMenu();
@@ -47,6 +55,21 @@ initListeners();
         });
     }
 
+    private void initSinglePlayerButtonListener() {
+        singlePlayerButton.addActionListener(e -> {
+            SinglePlayer singleplayer = new SinglePlayer(this);
+            this.setVisible(false);
+            singleplayer.setVisible(true);
+        });
+    }
+
+    private void initSettingButtonListeners() {
+        settingButton.addActionListener(e -> {
+            Setting setting = new Setting(this);
+            this.setVisible(false);
+            setting.setVisible(true);
+        });
+    }
 }
 
 

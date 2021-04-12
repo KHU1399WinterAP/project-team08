@@ -7,10 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class LoginMenu extends JFrame{
-    private JTextField colorSwitchTextField;
     private JTextField textField2;
-    private JTextField usernameTextField;
-    private JTextField passwordTextField;
     private JPasswordField passwordField1;
     private JButton loginButton;
     private JPanel mainpanel;
@@ -21,7 +18,7 @@ public class LoginMenu extends JFrame{
     public LoginMenu(JFrame previousFrame) {
         this.PREVIOUS_FRAME= previousFrame;
         setContentPane(mainpanel);
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         setResizable(false);
         pack();
@@ -85,7 +82,7 @@ public class LoginMenu extends JFrame{
     private void  initRegisterButtonListeners() {
         loginButton.addActionListener(
                 e -> {
-                    String username=usernameTextField.getText();
+                    String username=textField2.getText();
                     String password =String.valueOf(passwordField1.getPassword());
                     User user= Database.getUserByUsername(username);
                     if(user !=null && user.password.equals(password)){
