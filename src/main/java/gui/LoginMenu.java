@@ -1,10 +1,14 @@
 package gui;
 import models.User;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import database.Database;
+
+import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.IOException;
 
 public class LoginMenu extends JFrame{
     private JTextField textField2;
@@ -114,6 +118,18 @@ public class LoginMenu extends JFrame{
         this.dispose();
         PREVIOUS_FRAME.setVisible(true);
     }
-
+    private void createUIComponents() {
+        mainpanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                try {
+                    var image = ImageIO.read(this.getClass().getResource("/resourses/background.png"));
+                    g.drawImage(image, 0, 0, this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+    }
 
 }
