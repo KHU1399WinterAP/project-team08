@@ -60,7 +60,7 @@ public class Dashboard extends javax.swing.JFrame {
             SinglePlayer singleplayer = new SinglePlayer(this);
             this.setVisible(false);
             singleplayer.setVisible(true);
-        });
+            });
     }
 
     private void initSettingButtonListeners() {
