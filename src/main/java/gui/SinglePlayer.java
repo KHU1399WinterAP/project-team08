@@ -54,7 +54,7 @@ public class SinglePlayer extends JFrame {
     private void initAnimations(){
         balljumpAnimation = new BallJumpAnimation(ball ,() ->{System.out.println("this is a method");});
         balljumpAnimation.start();
-        ballGravityAnimation= new GravityAnimation(ball ,this::gameOver);
+        ballGravityAnimation= new GravityAnimation(ball); //,this::gameOver);
         ballGravityAnimation.start();
 
 
