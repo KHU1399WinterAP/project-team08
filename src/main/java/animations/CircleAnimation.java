@@ -7,7 +7,7 @@ public class CircleAnimation extends Thread{
     private final int SPEED;
 
     public CircleAnimation(JPanel panel, int interval, int speed) {
-        this.PANEL = panel
+        this.PANEL = panel;
         this.INTERVAL = interval;
         this.SPEED = speed;
 
@@ -19,7 +19,6 @@ public class CircleAnimation extends Thread{
     public void run() {
         try {
             while (true) {
-                PANEL.setLocation(PANEL.getX(),(int)(PANEL.getY() - deltaY ))
 
                 sleep(INTERVAL);
             }
@@ -30,4 +29,4 @@ public class CircleAnimation extends Thread{
 }
 
 
-}
+

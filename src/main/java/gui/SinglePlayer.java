@@ -24,7 +24,7 @@ public class SinglePlayer extends JFrame {
         setContentPane(mainpanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-
+        setVisible(true);
         pack();
         setLocationRelativeTo(null);
 
@@ -44,14 +44,15 @@ public class SinglePlayer extends JFrame {
        ball.setIcon(SpriteConfig.BALL);
        ball.setSize(width,height);
        ball.setLocation(50,50);
-          mainpanel.add(ball);
+
           mainpanel.setLayout(null);
+          mainpanel.add(ball);
 
 
 }
 
     private void initAnimations(){
-        balljumpAnimation = new BallJumpAnimation(ball ,);
+        balljumpAnimation = new BallJumpAnimation(ball ,() ->{System.out.println("this is a method");});
         balljumpAnimation.start();
         ballGravityAnimation= new GravityAnimation(ball ,this::gameOver);
         ballGravityAnimation.start();
