@@ -7,8 +7,9 @@
     </constraints>
     <properties>
       <enabled value="false"/>
-      <maximumSize width="500" height="800"/>
-      <minimumSize width="500" height="800"/>
+      <maximumSize width="421" height="495"/>
+      <minimumSize width="421" height="495"/>
+      <preferredSize width="421" height="495"/>
     </properties>
     <border type="none" title=" "/>
     <children>
@@ -28,7 +29,7 @@
           <autoscrolls value="false"/>
           <enabled value="true"/>
           <font size="12" style="0"/>
-          <foreground color="-4473925"/>
+          <foreground color="-14211841"/>
           <text value="change color"/>
         </properties>
       </component>
