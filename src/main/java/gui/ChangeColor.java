@@ -18,15 +18,12 @@ public class ChangeColor extends JFrame {
     private JButton backButton;
     private JButton greenButton;
     private JFrame PREVIOUS_FRAME;
-    private JPanel MAIN_PANEL;
-
-public ChangeColor(JPanel mainpanel){
-this.MAIN_PANEL=mainpanel;
-}
+    static String SingleBackGroundColor;
 
     public ChangeColor(JFrame previousFrame) {
         super("MainMenu|Dashboard|Setting|ChangeColor");
         this.PREVIOUS_FRAME = previousFrame;
+
 
 
         setContentPane(mainpanel);
@@ -52,33 +49,30 @@ this.MAIN_PANEL=mainpanel;
 
     private void initRedButtonListener() {
         redButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) -> MAIN_PANEL.setBackground(color);
-            Runnable endCallback = () -> MAIN_PANEL.setBackground(GuiConfig.COLOR_RED);
-            new ColorChangeAnimation(MAIN_PANEL.getBackground(), GuiConfig.COLOR_RED, stepCallback, endCallback).start();
-        });
+            SingleBackGroundColor="Red"; });
     }
 
     private void initBlueButtonListener() {
         blueButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) -> MAIN_PANEL.setBackground(color);
-            Runnable endCallback = () -> MAIN_PANEL.setBackground(GuiConfig.COLOR_BLUE);
-            new ColorChangeAnimation(MAIN_PANEL.getBackground(), GuiConfig.COLOR_BLUE, stepCallback, endCallback).start();
-        });
+            SingleBackGroundColor="Blue"; });
     }
 
     private void initPinkButtonListener() {
         pinkButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) -> MAIN_PANEL.setBackground(color);
-            Runnable endCallback = () -> MAIN_PANEL.setBackground(GuiConfig.COLOR_PINK);
-            new ColorChangeAnimation(MAIN_PANEL.getBackground(), GuiConfig.COLOR_PINK, stepCallback, endCallback).start();
+            SingleBackGroundColor="Pink";
         });
     }
 
     private void initPurpleButtonListeners() {
         purpleButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) -> MAIN_PANEL.setBackground(color);
-            Runnable endCallback = () -> MAIN_PANEL.setBackground(GuiConfig.COLOR_PURPLE);
-            new ColorChangeAnimation(MAIN_PANEL.getBackground(), GuiConfig.COLOR_PURPLE, stepCallback, endCallback).start();
+            SingleBackGroundColor="Purple";
+        });
+    }
+
+
+    private void initGreenButtonListener() {
+        greenButton.addActionListener(e -> {
+            SingleBackGroundColor="Green";
         });
     }
 
@@ -87,14 +81,6 @@ this.MAIN_PANEL=mainpanel;
             Setting setting = new Setting(this);
             this.setVisible(false);
             setting.setVisible(true);
-        });
-    }
-    private void initGreenButtonListener(){
-        greenButton.addActionListener(e -> {
-            Consumer<Color> stepCallback = (color) -> MAIN_PANEL.setBackground(color);
-            Runnable endCallback = () -> MAIN_PANEL.setBackground(GuiConfig.COLOR_GREEN);
-            new ColorChangeAnimation(MAIN_PANEL.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
-
         });
     }
 }
