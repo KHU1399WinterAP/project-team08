@@ -123,7 +123,7 @@ public class LoginMenu extends JFrame{
             @Override
             protected void paintComponent(Graphics g) {
                 try {
-                    var image = ImageIO.read(this.getClass().getResource("/resourses/background.png"));
+                    var image = ImageIO.read(this.getClass().getResource("/resources/background.png"));
                     g.drawImage(image, 0, 0, this);
                 } catch (IOException e) {
                     e.printStackTrace();
