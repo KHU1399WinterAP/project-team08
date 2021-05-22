@@ -5,9 +5,10 @@ public class GravityAnimation extends Thread{
     public static boolean halt=false;
     private final int GRAVITY_FORCE = 2;
     private final JLabel LABEL;
-
-    public GravityAnimation(JLabel LABEL){
+    private final Runnable GAME_OVER_CALLBACK;
+    public GravityAnimation(JLabel LABEL,Runnable gameOverCallback){
         this.LABEL=LABEL;
+        this.GAME_OVER_CALLBACK = gameOverCallback;
     }
     @Override
     public void run(){
@@ -21,5 +22,6 @@ public class GravityAnimation extends Thread{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        GAME_OVER_CALLBACK.run();
     }
 }
