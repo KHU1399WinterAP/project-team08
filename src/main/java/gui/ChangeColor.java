@@ -18,7 +18,7 @@ public class ChangeColor extends JFrame {
     private JButton backButton;
     private JButton greenButton;
     private JFrame PREVIOUS_FRAME;
-    static String SingleBackGroundColor;
+    static String SingleBackGroundColor="DEFAULT";
 
     public ChangeColor(JFrame previousFrame) {
         super("MainMenu|Dashboard|Setting|ChangeColor");
