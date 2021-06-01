@@ -36,24 +36,26 @@ public class SinglePlayer extends JFrame {
 
         initCustomComponent();
         initAnimations();
-
+        initSinglePlayerListeners();
         SwitchColors();
     }
 
     private void initCustomComponent() {
         ballLabel = new JLabel();
-        ballLabel.setSize(20,20);
+        ballLabel.setSize(20, 20);
 
-        int x=ballLabel.getWidth();
-        int y=ballLabel.getHeight();
+        int x = ballLabel.getWidth();
+        int y = ballLabel.getHeight();
 
-        ballLabel.setIcon(SpriteConfig.createIcon(x,y));
+        ballLabel.setIcon(SpriteConfig.createIcon(x, y));
         ballLabel.setLocation(200, 100);
 
         mainPanel.add(ballLabel);
     }
 
     private void initAnimations() {
+        balljumpAnimation = new BallJumpAnimation(ballLabel, this::gameOver);
+        balljumpAnimation.start();
 
         ballGravityAnimation = new GravityAnimation(ballLabel);
         ballGravityAnimation.start();
