@@ -128,6 +128,12 @@ public class SinglePlayer extends JFrame {
                 endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_GREEN);
                 new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
                 break;
+            case "DEFAULT":
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_DEFAULT);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_DEFAULT, stepCallback, endCallback).start();
+                break;
+
 
         }
     }

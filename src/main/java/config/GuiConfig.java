@@ -6,4 +6,5 @@ public class GuiConfig {
     public static final Color COLOR_PINK = new Color(227, 112, 227);
     public static final Color COLOR_BLUE = new Color(131, 171, 239);
     public static final Color COLOR_PURPLE = new Color(174, 112, 252);
+    public static final Color COLOR_DEFAULT=new Color(253, 252, 252, 255);
 }
