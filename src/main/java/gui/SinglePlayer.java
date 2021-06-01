@@ -1,4 +1,5 @@
 package gui;
+
 import animations.BallJumpAnimation;
 import animations.ColorChangeAnimation;
 import animations.GravityAnimation;
@@ -7,81 +8,105 @@ import config.SpriteConfig;
 import utils.GuiUtils;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.util.function.Consumer;
-public class SinglePlayer extends javax.swing.JFrame {
+
+public class SinglePlayer extends JFrame {
     private JFrame PREVIOUS_FRAME;
-    private JPanel mainpanel;
-    private JLabel ball;
-    private JButton backButton;
+    private JPanel mainPanel;
+    private JLabel ballLabel;
+
     private Thread ballGravityAnimation;
     private Thread balljumpAnimation;
     private Thread CircleAnimation;
 
     public SinglePlayer(JFrame previousFrame) {
         super("MainMenu|Dashboard|SinglePlayer");
+
         this.PREVIOUS_FRAME = previousFrame;
-        setContentPane(mainpanel);
+
+        setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
-        setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+
+        pack();
+        setLocationRelativeTo(null);
+
+        initCustomComponent();
         initAnimations();
         initSinglePlayerListeners();
-
-
-     switch (ChangeColor.SingleBackGroundColor) {
-        case "Red":
-            Consumer<Color> stepCallback = (color) -> mainpanel.setBackground(color);
-            Runnable endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_RED);
-            new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_RED, stepCallback, endCallback).start();
-            break;
-        case "Blue":
-            stepCallback = (color) -> mainpanel.setBackground(color);
-            endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_BLUE);
-            new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_BLUE, stepCallback, endCallback).start();
-            break;
-        case "Pink":
-            stepCallback = (color) -> mainpanel.setBackground(color);
-            endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_PINK);
-            new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_PINK, stepCallback, endCallback).start();
-            break;
-        case "Purple":
-            stepCallback = (color) -> mainpanel.setBackground(color);
-            endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_PURPLE);
-            new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_PURPLE, stepCallback, endCallback).start();
-            break;
-        case "Green":
-            stepCallback = (color) -> mainpanel.setBackground(color);
-            endCallback = () -> mainpanel.setBackground(GuiConfig.COLOR_GREEN);
-            new ColorChangeAnimation(mainpanel.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
-            break;
+        SwitchColors();
     }
-}
+
+    private void initCustomComponent() {
+        ballLabel = new JLabel();
+        ballLabel.setSize(20, 20);
+
+        int x = ballLabel.getWidth();
+        int y = ballLabel.getHeight();
+
+        ballLabel.setIcon(SpriteConfig.createIcon(x, y));
+        ballLabel.setLocation(200, 100);
+
+        mainPanel.add(ballLabel);
+    }
 
     private void initAnimations() {
-        balljumpAnimation = new BallJumpAnimation(ball, () -> { System.out.println("this is a method"); });
+        balljumpAnimation = new BallJumpAnimation(ballLabel, this::gameOver);
         balljumpAnimation.start();
-      ballGravityAnimation = new GravityAnimation(ball, this::gameOver);
-       ballGravityAnimation.start();
+
+        ballGravityAnimation = new GravityAnimation(ballLabel);
+        ballGravityAnimation.start();
     }
+
     private void initSinglePlayerListeners() {
-        GuiUtils.addMouseReleasedListener(mainpanel, e -> {
+        GuiUtils.addMouseReleasedListener(mainPanel, e -> {
             GravityAnimation.halt = true;
-            new BallJumpAnimation(ball, () -> GravityAnimation.halt= false).start();
+            new BallJumpAnimation(ballLabel, () -> GravityAnimation.halt = false).start();
         });
     }
 
     private void gameOver() {
-        System.out.println("gameover!");
+        System.out.println("GameOver!");
         WindowEvent closingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closingEvent);
     }
 
 
-
+    private void SwitchColors() {
+        switch (ChangeColor.SingleBackGroundColor) {
+            case "Red":
+                Consumer<Color> stepCallback = (color) -> mainPanel.setBackground(color);
+                Runnable endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_RED);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_RED, stepCallback, endCallback).start();
+                break;
+            case "Blue":
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_BLUE);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_BLUE, stepCallback, endCallback).start();
+                break;
+            case "Pink":
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_PINK);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_PINK, stepCallback, endCallback).start();
+                break;
+            case "Purple":
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_PURPLE);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_PURPLE, stepCallback, endCallback).start();
+                break;
+            case "Green":
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_GREEN);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
+                break;
+            default:
+                stepCallback = (color) -> mainPanel.setBackground(color);
+                endCallback = () -> mainPanel.setBackground(GuiConfig.Default);
+                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.Default, stepCallback, endCallback).start();
+                break;
+        }
+    }
 }
