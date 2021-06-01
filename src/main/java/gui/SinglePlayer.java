@@ -1,6 +1,7 @@
 package gui;
 
 import animations.BallJumpAnimation;
+import animations.CircleAnimation;
 import animations.ColorChangeAnimation;
 import animations.GravityAnimation;
 import config.GuiConfig;
@@ -9,6 +10,8 @@ import utils.GuiUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.function.Consumer;
 
@@ -16,6 +19,8 @@ public class SinglePlayer extends JFrame {
     private JFrame PREVIOUS_FRAME;
     private JPanel mainPanel;
     private JLabel ballLabel;
+    private JLabel circleLabel1;
+
 
     private Thread ballGravityAnimation;
     private Thread balljumpAnimation;
@@ -33,12 +38,16 @@ public class SinglePlayer extends JFrame {
 
         pack();
         setLocationRelativeTo(null);
-
         initCustomComponent();
-        initAnimations();
+
+        initHedge();
+
         initSinglePlayerListeners();
+        initAnimations();
         SwitchColors();
+
     }
+
 
     private void initCustomComponent() {
         ballLabel = new JLabel();
@@ -47,18 +56,35 @@ public class SinglePlayer extends JFrame {
         int x = ballLabel.getWidth();
         int y = ballLabel.getHeight();
 
-        ballLabel.setIcon(SpriteConfig.createIcon(x, y));
-        ballLabel.setLocation(200, 100);
+        ballLabel.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.BALL_URL));
+        ballLabel.setLocation(200, 50);
 
         mainPanel.add(ballLabel);
     }
 
+    private void initHedge() {
+        circleLabel1 = new JLabel();
+        circleLabel1.setSize(50, 50);
+
+        int x = circleLabel1.getWidth();
+        int y = circleLabel1.getHeight();
+
+        circleLabel1.setLocation(200,400);
+
+        circleLabel1.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.CIRCLE_URL));
+        mainPanel.add(circleLabel1);
+    }
+
     private void initAnimations() {
-        balljumpAnimation = new BallJumpAnimation(ballLabel, this::gameOver);
+
+        balljumpAnimation = new BallJumpAnimation(ballLabel, () -> {
+            System.out.println("this is the method");
+        });
         balljumpAnimation.start();
 
-        ballGravityAnimation = new GravityAnimation(ballLabel);
+        ballGravityAnimation = new GravityAnimation(ballLabel, this::gameOver);
         ballGravityAnimation.start();
+
     }
 
     private void initSinglePlayerListeners() {
@@ -102,11 +128,7 @@ public class SinglePlayer extends JFrame {
                 endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_GREEN);
                 new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
                 break;
-            default:
-                stepCallback = (color) -> mainPanel.setBackground(color);
-                endCallback = () -> mainPanel.setBackground(GuiConfig.Default);
-                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.Default, stepCallback, endCallback).start();
-                break;
+
         }
     }
 }

@@ -10,18 +10,20 @@ import java.net.URL;
 public class SpriteConfig {
 
 
-    private static final URL BALL_URL = SpriteConfig.class.getResource("/resources/ball.png");
+    public static final URL BALL_URL = SpriteConfig.class.getResource("/resources/ball.png");
+    public static final URL CIRCLE_URL = SpriteConfig.class.getResource("/resources/colorCircle.png");
 
-    public static Icon createIcon(int x, int y) {
-        BufferedImage img=null;
+    public static Icon createIcon(int x, int y,URL url) {
+        BufferedImage img = null;
         try {
-            img = ImageIO.read(SpriteConfig.BALL_URL);
+            img = ImageIO.read(url);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ImageIcon imageIcon = new ImageIcon(img.getScaledInstance(x,y, Image.SCALE_SMOOTH));
+        ImageIcon imageIcon = new ImageIcon(img.getScaledInstance(x, y, Image.SCALE_SMOOTH));
         return imageIcon;
-    }}
+    }
+}
 
 
 
