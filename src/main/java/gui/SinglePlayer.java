@@ -35,9 +35,9 @@ public class SinglePlayer extends JFrame {
         setLocationRelativeTo(null);
 
         initCustomComponent();
-        initAnimations();
         initSinglePlayerListeners();
         SwitchColors();
+        initAnimations();
     }
 
     private void initCustomComponent() {
@@ -54,10 +54,10 @@ public class SinglePlayer extends JFrame {
     }
 
     private void initAnimations() {
-        balljumpAnimation = new BallJumpAnimation(ballLabel, this::gameOver);
+        balljumpAnimation = new BallJumpAnimation(ballLabel,()-> {System.out.println("this is the method");});
         balljumpAnimation.start();
 
-        ballGravityAnimation = new GravityAnimation(ballLabel);
+        ballGravityAnimation = new GravityAnimation(ballLabel,this::gameOver);
         ballGravityAnimation.start();
     }
 
@@ -102,11 +102,7 @@ public class SinglePlayer extends JFrame {
                 endCallback = () -> mainPanel.setBackground(GuiConfig.COLOR_GREEN);
                 new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.COLOR_GREEN, stepCallback, endCallback).start();
                 break;
-            default:
-                stepCallback = (color) -> mainPanel.setBackground(color);
-                endCallback = () -> mainPanel.setBackground(GuiConfig.Default);
-                new ColorChangeAnimation(mainPanel.getBackground(), GuiConfig.Default, stepCallback, endCallback).start();
-                break;
+
         }
     }
 }
