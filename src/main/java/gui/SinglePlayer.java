@@ -1,7 +1,6 @@
 package gui;
 
 import animations.BallJumpAnimation;
-import animations.CircleAnimation;
 import animations.ColorChangeAnimation;
 import animations.GravityAnimation;
 import config.GuiConfig;
@@ -10,8 +9,6 @@ import utils.GuiUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.util.function.Consumer;
 
@@ -38,16 +35,20 @@ public class SinglePlayer extends JFrame {
 
         pack();
         setLocationRelativeTo(null);
+
+
         initCustomComponent();
-
         initHedge();
-
         initSinglePlayerListeners();
         initAnimations();
         SwitchColors();
 
     }
 
+    private void createUIComponents() {
+        mainPanel=new JPanel();
+        mainPanel.setLayout(null);
+    }
 
     private void initCustomComponent() {
         ballLabel = new JLabel();
@@ -59,7 +60,7 @@ public class SinglePlayer extends JFrame {
         ballLabel.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.BALL_URL));
         ballLabel.setLocation(200, 50);
 
-        mainPanel.add(ballLabel);
+        mainPanel.add(ballLabel,"text2");
     }
 
     private void initHedge() {
@@ -72,14 +73,14 @@ public class SinglePlayer extends JFrame {
         circleLabel1.setLocation(200,400);
 
         circleLabel1.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.CIRCLE_URL));
-        mainPanel.add(circleLabel1);
+        mainPanel.add(circleLabel1,"tex1");
     }
 
     private void initAnimations() {
 
         balljumpAnimation = new BallJumpAnimation(ballLabel, () -> {
-            System.out.println("this is the method");
-        });
+            System.out.println("this is the method"); });
+
         balljumpAnimation.start();
 
         ballGravityAnimation = new GravityAnimation(ballLabel, this::gameOver);
@@ -90,8 +91,7 @@ public class SinglePlayer extends JFrame {
     private void initSinglePlayerListeners() {
         GuiUtils.addMouseReleasedListener(mainPanel, e -> {
             GravityAnimation.halt = true;
-            new BallJumpAnimation(ballLabel, () -> GravityAnimation.halt = false).start();
-        });
+            new BallJumpAnimation(ballLabel, () -> GravityAnimation.halt = false).start(); });
     }
 
     private void gameOver() {
@@ -131,4 +131,5 @@ public class SinglePlayer extends JFrame {
 
         }
     }
+
 }
