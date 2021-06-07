@@ -9,7 +9,7 @@
 ## :headphones: for just downloading the color switch game music click [(here)](https://downloads.khinsider.com/game-soundtracks/album/color-switch-mobile)
 ## Members :
 - paria jokar 992023007
-- mohadese mohamadzade 992023027
+- mohadese mohamadzadeh 992023027
 - mobina safaei 992023021
 - hedye afzalzade 992023002
 
