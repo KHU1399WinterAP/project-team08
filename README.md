@@ -11,6 +11,6 @@
 - paria jokar 992023007
 - mohadese mohamadzadeh 992023027
 - mobina safaei 992023021
-- hedye afzalzade 992023002
+- hedye afzalzadeh 992023002
 
 
