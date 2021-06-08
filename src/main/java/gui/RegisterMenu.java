@@ -42,49 +42,6 @@ public class RegisterMenu extends JFrame{
 
     private final JFrame PREVIOUS_FRAME;
 
-    private void initWindowListener(){
-        this.addWindowListener(
-                new WindowListener() {
-                    @Override
-                    public void windowOpened(WindowEvent e) {
-
-                    }
-
-                    @Override
-                    public void windowClosing(WindowEvent e) {
-                        closeWindow();
-                    }
-
-                    @Override
-                    public void windowClosed(WindowEvent e) {
-
-                    }
-
-                    @Override
-                    public void windowIconified(WindowEvent e) {
-
-                    }
-
-                    @Override
-                    public void windowDeiconified(WindowEvent e) {
-
-                    }
-
-                    @Override
-                    public void windowActivated(WindowEvent e) {
-
-                    }
-
-                    @Override
-                    public void windowDeactivated(WindowEvent e) {
-
-                    }
-                }
-        );
-    }
-
-
-
     private void  initRegisterButtonListeners() {
         exitButton.addActionListener(
                 e -> {

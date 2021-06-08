@@ -1,13 +1,7 @@
 package gui;
 
-import animations.ColorChangeAnimation;
-import config.GuiConfig;
-
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.function.Consumer;
+
 
 public class ChangeColor extends JFrame {
     private JButton redButton;

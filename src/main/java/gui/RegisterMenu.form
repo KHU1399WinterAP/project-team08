@@ -40,6 +40,7 @@
         </constraints>
         <properties>
           <background color="-16251383"/>
+          <editable value="false"/>
           <font name="Fira Code Retina" size="28" style="3"/>
           <foreground color="-4509042"/>
           <horizontalAlignment value="0"/>
@@ -54,6 +55,7 @@
         </constraints>
         <properties>
           <background color="-1452524"/>
+          <editable value="false"/>
           <font name="Sitka Banner" size="20" style="3"/>
           <foreground color="-16251383"/>
           <text value="Username"/>
@@ -75,6 +77,7 @@
         </constraints>
         <properties>
           <background color="-8443973"/>
+          <editable value="false"/>
           <font name="Sitka Banner" size="20" style="3"/>
           <foreground color="-16251383"/>
           <text value="Password"/>
