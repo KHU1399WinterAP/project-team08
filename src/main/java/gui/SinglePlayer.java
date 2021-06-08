@@ -19,6 +19,7 @@ public class SinglePlayer extends JFrame {
     private JLabel circleLabel1;
 
 
+
     private Thread ballGravityAnimation;
     private Thread balljumpAnimation;
     private Thread CircleAnimation;
@@ -42,6 +43,7 @@ public class SinglePlayer extends JFrame {
         initSinglePlayerListeners();
         initAnimations();
         SwitchColors();
+
 
     }
 

@@ -17,8 +17,10 @@
         </constraints>
         <properties>
           <background color="-8842053"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
-          <text value="Log out"/>
+          <label value="Logout"/>
+          <text value="Logout"/>
         </properties>
       </component>
       <component id="c5356" class="javax.swing.JButton" binding="settingButton" default-binding="true">
@@ -27,6 +29,7 @@
         </constraints>
         <properties>
           <background color="-15131839"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Setting"/>
         </properties>
@@ -37,6 +40,7 @@
         </constraints>
         <properties>
           <background color="-1452524"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Multi player"/>
         </properties>
@@ -47,6 +51,7 @@
         </constraints>
         <properties>
           <background color="-4513950"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Single player"/>
         </properties>

@@ -34,7 +34,7 @@
         </constraints>
         <properties>
           <background color="-10422797"/>
-          <font name="Sitka Banner" size="18" style="3"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Login"/>
         </properties>
@@ -45,7 +45,7 @@
         </constraints>
         <properties>
           <background color="-4509042"/>
-          <font name="Sitka Banner" size="20" style="3"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Back"/>
         </properties>
@@ -55,8 +55,10 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <enabled value="false"/>
-          <text value="Colorswitch"/>
+          <enabled value="true"/>
+          <font name="Comic Sans MS" size="36" style="3"/>
+          <foreground color="-1458886"/>
+          <text value="Color Switch"/>
         </properties>
       </component>
       <component id="89471" class="javax.swing.JLabel">
@@ -64,7 +66,11 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-57201"/>
+          <enabled value="true"/>
           <font name="Sitka Banner" size="20" style="3"/>
+          <foreground color="-1245386"/>
+          <horizontalAlignment value="0"/>
           <text value="Username:"/>
         </properties>
       </component>
@@ -73,6 +79,7 @@
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-1245386"/>
           <font name="Sitka Banner" size="20" style="3"/>
           <foreground color="-8443973"/>
           <text value="Password:"/>

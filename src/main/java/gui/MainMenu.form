@@ -17,8 +17,8 @@
         </constraints>
         <properties>
           <background color="-16251383"/>
-          <font name="Segoe MDL2 Assets" size="28" style="3"/>
-          <foreground color="-4509042"/>
+          <font name="Comic Sans MS" size="36" style="3"/>
+          <foreground color="-1458886"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <text value="Color Switch"/>
@@ -29,7 +29,8 @@
           <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-12643007"/>
+          <background color="-3267197"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Login"/>
         </properties>
@@ -40,7 +41,9 @@
         </constraints>
         <properties>
           <background color="-1452524"/>
-          <foreground color="-12511956"/>
+          <focusable value="false"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
+          <foreground color="-15395067"/>
           <text value="Register"/>
         </properties>
       </component>
@@ -50,7 +53,8 @@
         </constraints>
         <properties>
           <background color="-10422797"/>
-          <foreground color="-12511956"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
+          <foreground color="-15395067"/>
           <text value="Exit"/>
         </properties>
       </component>

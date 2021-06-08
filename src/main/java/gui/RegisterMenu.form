@@ -27,7 +27,7 @@
         </constraints>
         <properties>
           <background color="-10422797"/>
-          <font name="Sitka Banner" size="20" style="3"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Register"/>
         </properties>
@@ -41,24 +41,10 @@
         <properties>
           <background color="-16251383"/>
           <editable value="false"/>
-          <font name="Fira Code Retina" size="28" style="3"/>
-          <foreground color="-4509042"/>
+          <font name="Comic Sans MS" size="36" style="3"/>
+          <foreground color="-1458886"/>
           <horizontalAlignment value="0"/>
           <text value="Color Switch"/>
-        </properties>
-      </component>
-      <component id="4956f" class="javax.swing.JTextField" binding="usernameTextField" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-1452524"/>
-          <editable value="false"/>
-          <font name="Sitka Banner" size="20" style="3"/>
-          <foreground color="-16251383"/>
-          <text value="Username"/>
         </properties>
       </component>
       <component id="46c07" class="javax.swing.JTextField" binding="textField1" default-binding="true">
@@ -69,30 +55,38 @@
         </constraints>
         <properties/>
       </component>
-      <component id="d921e" class="javax.swing.JTextField" binding="passwordTextField" default-binding="true">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-8443973"/>
-          <editable value="false"/>
-          <font name="Sitka Banner" size="20" style="3"/>
-          <foreground color="-16251383"/>
-          <text value="Password"/>
-        </properties>
-      </component>
       <component id="788c" class="javax.swing.JButton" binding="backButton" default-binding="true">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-4509042"/>
-          <font name="Sitka Banner" size="20" style="3"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <horizontalTextPosition value="0"/>
           <text value="Back"/>
+        </properties>
+      </component>
+      <component id="4079d" class="javax.swing.JLabel" binding="Usernamelable">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1245386"/>
+          <enabled value="true"/>
+          <font name="Sitka Banner" size="20" style="3"/>
+          <foreground color="-1245386"/>
+          <text value="Username:"/>
+        </properties>
+      </component>
+      <component id="c53bf" class="javax.swing.JLabel" binding="Passwordlable">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Sitka Banner" size="20" style="3"/>
+          <foreground color="-8443973"/>
+          <text value="Password:"/>
         </properties>
       </component>
     </children>

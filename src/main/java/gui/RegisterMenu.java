@@ -13,9 +13,9 @@ public class RegisterMenu extends JFrame{
     private JButton exitButton;
     private JPanel mainpanel;
     private JTextField colorSwitchTextField;
-    private JTextField usernameTextField;
-    private JTextField passwordTextField;
     private JButton backButton;
+    private JLabel Usernamelable;
+    private JLabel Passwordlable;
 
 
     public RegisterMenu(JFrame previousFrame){
