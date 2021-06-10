@@ -6,23 +6,11 @@
       <xy x="20" y="20" width="500" height="495"/>
     </constraints>
     <properties>
-      <minimumSize width="421" height="495"/>
-      <preferredSize width="421" height="495"/>
+      <minimumSize width="468" height="447"/>
+      <preferredSize width="468" height="447"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="ce450" class="javax.swing.JButton" binding="logOutButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-8842053"/>
-          <font name="Lucida Sans Typewriter" size="18" style="1"/>
-          <foreground color="-16251383"/>
-          <label value="Logout"/>
-          <text value="Logout"/>
-        </properties>
-      </component>
       <component id="c5356" class="javax.swing.JButton" binding="settingButton" default-binding="true">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -67,6 +55,18 @@
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
           <text value="Color Switch"/>
+        </properties>
+      </component>
+      <component id="ce450" class="javax.swing.JButton" binding="logOutButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8842053"/>
+          <font name="Lucida Sans Typewriter" size="18" style="1"/>
+          <foreground color="-16251383"/>
+          <label value="Log out"/>
+          <text value="Log out"/>
         </properties>
       </component>
     </children>
