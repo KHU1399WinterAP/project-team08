@@ -1,6 +1,9 @@
 package gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 
 
 public class Setting extends JFrame {
@@ -49,4 +52,17 @@ public class Setting extends JFrame {
     }
 
 
+    private void createUIComponents() {
+        mainpanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                try {
+                    var image = ImageIO.read(this.getClass().getResource("/resources/background.png"));
+                    g.drawImage(image, 0, 0, this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+    }
 }

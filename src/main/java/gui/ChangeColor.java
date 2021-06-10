@@ -1,6 +1,9 @@
 package gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 
 
 public class ChangeColor extends JFrame {
@@ -76,6 +79,19 @@ public class ChangeColor extends JFrame {
             this.setVisible(false);
             setting.setVisible(true);
         });
+    }
+    private void createUIComponents() {
+        mainpanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                try {
+                    var image = ImageIO.read(this.getClass().getResource("/resources/background.png"));
+                    g.drawImage(image, 0, 0, this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
     }
 }
 
