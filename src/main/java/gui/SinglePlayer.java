@@ -67,12 +67,12 @@ public class SinglePlayer extends JFrame {
 
     private void initHedge() {
         circleLabel1 = new JLabel();
-        circleLabel1.setSize(50, 50);
+        circleLabel1.setSize(100, 100);
 
         int x = circleLabel1.getWidth();
         int y = circleLabel1.getHeight();
 
-        circleLabel1.setLocation(200,400);
+        circleLabel1.setLocation(155,400);
 
         circleLabel1.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.CIRCLE_URL));
         mainPanel.add(circleLabel1,"tex1");
@@ -139,5 +139,4 @@ public class SinglePlayer extends JFrame {
 
         }
     }
-
 }
