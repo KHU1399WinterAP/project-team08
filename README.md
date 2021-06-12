@@ -6,17 +6,21 @@
 
 ## :headphones: for just downloading the color switch game music click [(here)](https://downloads.khinsider.com/game-soundtracks/album/color-switch-mobile)
 ## The tools used to build this project :
-- intellij IDEA
-- MYSQl connector java
+- intellij IDEA (for download click [(here)](https://www.jetbrains.com/idea/download/#section=windows) 
+- MYSQl connector java (for download click [(here)](https://search.maven.org/artifact/mysql/mysql-connector-java/8.0.24/jar)
 ## Teacher assistant:
 -Bijan Eisapor
 ## Run project
-```
-For run this project first clone it on your system.
-after that you must  Download MySQL connector java.you can download it [(here)](https://search.maven.org/artifact/mysql/mysql-connector-java/8.0.24/jar)
--now open intellij IDEA
--Click on File>Project Structor>libraries> (+) >add MySQL connector java.jar
-```
+1.First Download MySQL connector java
+
+2.Make a new folder on your system
+3.Open Windows PowerShell 
+4.Copy our project http URL
+5.git clone (URL)
+6.Open intellij Idea
+7.Open the file 
+8.Run the project
+9. Enjoy the game
 ## Members :
 - paria jokar 992023007
 - mohadese mohamadzade 992023027
