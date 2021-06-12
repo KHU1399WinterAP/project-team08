@@ -12,9 +12,9 @@
 -Bijan Eisapor
 ## Run project
 For run this project first clone it on your system.
-#after that you must  Download MySQL connector java.you can download it [(here)](https://search.maven.org/artifact/mysql/mysql-connector-java/8.0.24/jar)
-#-now open intellij IDEA
-#-Click on File>Project Structor>libraries> (+) >add MySQL connector java.jar
+after that you must  Download MySQL connector java.you can download it [(here)](https://search.maven.org/artifact/mysql/mysql-connector-java/8.0.24/jar)
+-now open intellij IDEA
+-Click on File>Project Structor>libraries> (+) >add MySQL connector java.jar
 ## Members :
 - paria jokar 992023007
 - mohadese mohamadzade 992023027
