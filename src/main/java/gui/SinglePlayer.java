@@ -6,23 +6,29 @@ import animations.GravityAnimation;
 import config.GuiConfig;
 import config.SpriteConfig;
 import utils.GuiUtils;
-
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.function.Consumer;
 
+
 public class SinglePlayer extends JFrame {
+
     private JFrame PREVIOUS_FRAME;
     private JPanel mainPanel;
     private JLabel ballLabel;
     private JLabel circleLabel1;
 
 
-
     private Thread ballGravityAnimation;
     private Thread balljumpAnimation;
     private Thread CircleAnimation;
+
 
     public SinglePlayer(JFrame previousFrame) {
         super("MainMenu|Dashboard|SinglePlayer");
@@ -45,10 +51,11 @@ public class SinglePlayer extends JFrame {
         SwitchColors();
 
 
+
     }
 
     private void createUIComponents() {
-        mainPanel=new JPanel();
+        mainPanel = new JPanel();
         mainPanel.setLayout(null);
     }
 
@@ -60,28 +67,58 @@ public class SinglePlayer extends JFrame {
         int y = ballLabel.getHeight();
 
         ballLabel.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.BALL_URL));
-        ballLabel.setLocation(200, 50);
+        ballLabel.setLocation(200, 500);
 
-        mainPanel.add(ballLabel,"text2");
+        mainPanel.add(ballLabel, "text2");
     }
+
+
+    int i = 0;
+    public void paintComponent(Graphics g) {
+        BufferedImage circle = LoadImage("colorCircle.png");
+        AffineTransform at = AffineTransform.getTranslateInstance(100, 100);
+        at.rotate(Math.toRadians(i++));
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawImage(circle, at, null);
+    }
+
+    BufferedImage LoadImage(String FileName) {
+        BufferedImage img = null;
+        repaint();
+
+        try {
+            img = ImageIO.read(new File(FileName));
+        } catch (IOException e) {
+        }
+        return img;
+    }
+
+
+
+
+
 
     private void initHedge() {
         circleLabel1 = new JLabel();
-        circleLabel1.setSize(50, 50);
+        circleLabel1.setSize(105, 105);
 
         int x = circleLabel1.getWidth();
         int y = circleLabel1.getHeight();
 
-        circleLabel1.setLocation(200,400);
+        circleLabel1.setLocation(160, 400);
 
         circleLabel1.setIcon(SpriteConfig.createIcon(x, y, SpriteConfig.CIRCLE_URL));
-        mainPanel.add(circleLabel1,"tex1");
+        mainPanel.add(circleLabel1, "tex1");
+
+
+
     }
 
     private void initAnimations() {
 
         balljumpAnimation = new BallJumpAnimation(ballLabel, () -> {
-            System.out.println("this is the method"); });
+            System.out.println("this is the method");
+        });
 
         balljumpAnimation.start();
 
@@ -93,7 +130,8 @@ public class SinglePlayer extends JFrame {
     private void initSinglePlayerListeners() {
         GuiUtils.addMouseReleasedListener(mainPanel, e -> {
             GravityAnimation.halt = true;
-            new BallJumpAnimation(ballLabel, () -> GravityAnimation.halt = false).start(); });
+            new BallJumpAnimation(ballLabel, () -> GravityAnimation.halt = false).start();
+        });
     }
 
     private void gameOver() {
@@ -140,4 +178,11 @@ public class SinglePlayer extends JFrame {
         }
     }
 
+
 }
+
+
+
+
+
+
