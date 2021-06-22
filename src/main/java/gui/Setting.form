@@ -19,6 +19,7 @@
         </constraints>
         <properties>
           <background color="-4518031"/>
+          <focusable value="false"/>
           <font name="Droid Sans Mono" size="14" style="3"/>
           <foreground color="-14940312"/>
           <text value="dashboard"/>
@@ -32,6 +33,7 @@
           <autoscrolls value="false"/>
           <background color="-4518031"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <font name="Droid Sans Mono" size="14" style="3"/>
           <foreground color="-14940312"/>
           <text value="change color"/>
