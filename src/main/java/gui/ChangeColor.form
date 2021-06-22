@@ -18,6 +18,7 @@
         <properties>
           <background color="-1362892"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="red"/>
         </properties>
       </component>
@@ -38,6 +39,7 @@
         <properties>
           <background color="-13748025"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="blue"/>
         </properties>
       </component>
@@ -48,6 +50,7 @@
         <properties>
           <background color="-1207342"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="pink"/>
         </properties>
       </component>
@@ -58,6 +61,7 @@
         <properties>
           <background color="-7195413"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="purple"/>
         </properties>
       </component>
@@ -68,6 +72,7 @@
         <properties>
           <background color="-14935012"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="back"/>
         </properties>
       </component>
@@ -78,6 +83,7 @@
         <properties>
           <background color="-13309090"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <text value="green"/>
         </properties>
       </component>
