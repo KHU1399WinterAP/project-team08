@@ -8,6 +8,7 @@
     <properties>
       <background color="-12828863"/>
       <enabled value="false"/>
+      <focusable value="false"/>
       <minimumSize width="468" height="447"/>
       <preferredSize width="468" height="447"/>
     </properties>
@@ -27,6 +28,7 @@
         </constraints>
         <properties>
           <background color="-10422797"/>
+          <focusable value="false"/>
           <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <text value="Register"/>
@@ -46,6 +48,7 @@
         </constraints>
         <properties>
           <background color="-4509042"/>
+          <focusable value="false"/>
           <font name="Lucida Sans Typewriter" size="18" style="1"/>
           <foreground color="-16251383"/>
           <horizontalTextPosition value="0"/>
