@@ -2,7 +2,6 @@ package gui;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import java.awt.*;
 import java.io.IOException;
 
@@ -11,7 +10,6 @@ public class Dashboard extends javax.swing.JFrame {
     private JPanel mainpanel;
     private JButton logOutButton;
     private JButton settingButton;
-    private JButton multiPlayerButton;
     private JButton singlePlayerButton;
 
     private final JFrame MAIN_MENU_FRAME;
