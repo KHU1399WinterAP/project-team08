@@ -6,14 +6,9 @@ import animations.GravityAnimation;
 import config.GuiConfig;
 import config.SpriteConfig;
 import utils.GuiUtils;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.function.Consumer;
 
 
@@ -71,28 +66,6 @@ public class SinglePlayer extends JFrame {
 
         mainPanel.add(ballLabel, "text2");
     }
-
-
-    int i = 0;
-    public void paintComponent(Graphics g) {
-        BufferedImage circle = LoadImage("colorCircle.png");
-        AffineTransform at = AffineTransform.getTranslateInstance(100, 100);
-        at.rotate(Math.toRadians(i++));
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.drawImage(circle, at, null);
-    }
-
-    BufferedImage LoadImage(String FileName) {
-        BufferedImage img = null;
-        repaint();
-
-        try {
-            img = ImageIO.read(new File(FileName));
-        } catch (IOException e) {
-        }
-        return img;
-    }
-
 
 
 
